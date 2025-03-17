@@ -1,7 +1,6 @@
 package br.com.fiap.carbonnow.components
 
 import android.annotation.SuppressLint
-import android.provider.CalendarContract.Colors
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -23,11 +22,14 @@ import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import br.com.fiap.carbonnow.R
 
 
@@ -35,8 +37,8 @@ import br.com.fiap.carbonnow.R
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3Api::class)
 @SuppressLint("ResourceAsColor")
 @Composable
-fun LoginScreen(modifier: Modifier = Modifier) {
-    Box(
+fun LoginScreen() {
+            Box(
         modifier = Modifier
             .fillMaxSize()
             .background(Color(R.color.dark)),
@@ -44,10 +46,12 @@ fun LoginScreen(modifier: Modifier = Modifier) {
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
+            verticalArrangement = Arrangement.Center,
+            modifier = Modifier.padding(top = 130.dp)
         ) {
-            Text(text = "User", color = Color.White)
+            Text(text = "User", color = Color.White, style = TextStyle(fontSize = 20.sp))
             OutlinedTextField(
+                modifier = Modifier.shadow(8.dp, RoundedCornerShape(148.dp)),
                 value = "Type here...",
                 onValueChange = {},
                 shape = RoundedCornerShape(148.dp),
@@ -56,9 +60,10 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                     unfocusedTextColor = colorResource(id = R.color.dark)
                 )
             )
-            Spacer(modifier = Modifier.height(16.dp))
-            Text(text = "Password", color = Color.White)
+            Spacer(modifier = Modifier.height(40.dp))
+            Text(text = "Password", color = Color.White, style = TextStyle(fontSize = 20.sp))
             OutlinedTextField(
+                modifier = Modifier.shadow(8.dp, RoundedCornerShape(148.dp)),
                 value = "Type here...",
                 onValueChange = {},
                 shape = RoundedCornerShape(148.dp),
@@ -67,22 +72,24 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                     unfocusedTextColor = colorResource(id = R.color.dark)
                 )
             )
-            Spacer(modifier = Modifier.height(28.dp))
+            Spacer(modifier = Modifier.height(40.dp))
             Button(
+                modifier = Modifier.shadow(8.dp, RoundedCornerShape(148.dp)).width(120.dp).height(40.dp),
+                //IMPLEMENTAR FUNÇÃO DE LOGIN
                 onClick = { /*TODO*/ },
                 colors = ButtonDefaults.buttonColors(
                     containerColor = colorResource(id = R.color.white_blue)
-                )
+                ),
             ) {
-                Text(text = "Login")
-
-
+                Text(text = "Login", style = TextStyle(fontSize = 20.sp))
             }
         }
     }
 
     Box(
-        modifier = Modifier.fillMaxWidth().padding(top = 100.dp), Alignment.Center
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 100.dp), Alignment.Center
     ) {
         Image(
             painter = painterResource(id = R.drawable.logo),

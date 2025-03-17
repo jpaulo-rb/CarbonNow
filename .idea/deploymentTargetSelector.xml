@@ -4,10 +4,10 @@
     <selectionStates>
       <SelectionState runConfigName="LoginScreenPreview">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-03-17T14:33:56.897367Z">
+        <DropdownSelection timestamp="2025-03-17T16:32:34.504996600Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\Vinicius\.android\avd\Pixel_2_API_27.avd" />
+              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\Vinicius\.android\avd\Pixel_2_API_29_Carbon.avd" />
             </handle>
           </Target>
         </DropdownSelection>
