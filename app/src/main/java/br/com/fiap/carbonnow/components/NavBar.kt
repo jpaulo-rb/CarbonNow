@@ -42,4 +42,3 @@ fun NavBar(modifier: Modifier = Modifier, navController: NavController) {
         }
     }
 }
-

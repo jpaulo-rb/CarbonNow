@@ -3,6 +3,7 @@ package br.com.fiap.carbonnow.components
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -41,7 +42,10 @@ fun ConfigScreen(modifier: Modifier = Modifier, navController: NavController) {
             //ADICIONAR ONCLICK PARA CADA ITEM
             Text(
                 text = "List all items",
-                style = TextStyle(Color.White, fontSize = 24.sp)
+                style = TextStyle(Color.White, fontSize = 24.sp),
+                modifier = Modifier.padding(8.dp).clickable {
+                    navController.navigate("items")
+                }
             )
             Spacer(modifier = Modifier.padding(12.dp))
             Text(
