@@ -20,11 +20,12 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import br.com.fiap.carbonnow.R
 
 @SuppressLint("ResourceAsColor")
 @Composable
-fun ConfigScreen(modifier: Modifier = Modifier) {
+fun ConfigScreen(modifier: Modifier = Modifier, navController: NavController) {
     Box(modifier= Modifier.background(Color(R.color.dark)).fillMaxSize())
     {
         Column(
@@ -54,12 +55,12 @@ fun ConfigScreen(modifier: Modifier = Modifier) {
             )
         }
     }
-    NavBar()
+    NavBar(navController = navController)
 }
 
-@Preview (showSystemUi = true, showBackground = true)
-@Composable
-private fun ConfigScreenPreview() {
-    ConfigScreen()
-
-}
+//@Preview (showSystemUi = true, showBackground = true)
+//@Composable
+//private fun ConfigScreenPreview() {
+//    ConfigScreen()
+//
+//}

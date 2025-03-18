@@ -24,12 +24,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import br.com.fiap.carbonnow.R
 
 
@@ -37,7 +39,7 @@ import br.com.fiap.carbonnow.R
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3Api::class)
 @SuppressLint("ResourceAsColor")
 @Composable
-fun LoginScreen() {
+fun LoginScreen(navController: NavController) {
             Box(
         modifier = Modifier
             .fillMaxSize()
@@ -75,8 +77,9 @@ fun LoginScreen() {
             Spacer(modifier = Modifier.height(40.dp))
             Button(
                 modifier = Modifier.shadow(8.dp, RoundedCornerShape(148.dp)).width(120.dp).height(40.dp),
-                //IMPLEMENTAR FUNÇÃO DE LOGIN
-                onClick = { /*TODO*/ },
+                onClick = {
+                    navController.navigate("home")
+                },
                 colors = ButtonDefaults.buttonColors(
                     containerColor = colorResource(id = R.color.white_blue)
                 ),
@@ -104,5 +107,5 @@ fun LoginScreen() {
 @Preview (showSystemUi = true, showBackground = true)
 @Composable
 private fun LoginScreenPreview() {
-    LoginScreen()
+    LoginScreen(navController = NavController(context = LocalContext.current))
 }
