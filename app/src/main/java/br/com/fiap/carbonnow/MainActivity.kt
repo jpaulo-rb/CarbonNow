@@ -48,10 +48,14 @@ class MainActivity : ComponentActivity() {
                             OpenedDataScreen(navController = navController)
                         }
                         composable(route = "electricity"){
-                            ElectricityScreen(navController = navController)
+                            ElectricityScreen(
+                                navController = navController,
+                                modifier = TODO(),
+                                electricityScreenViewModel = TODO()
+                            )
                         }
                         composable(route = "shipping"){
-                            ShippingScreen(navController = navController)
+                            ShippingScreen(navController = navController, modifier = TODO(), shippingScreenViewModel = TODO())
                         }
                     }
                 }
