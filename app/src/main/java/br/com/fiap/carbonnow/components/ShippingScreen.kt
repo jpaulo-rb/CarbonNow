@@ -47,7 +47,7 @@ import java.math.BigDecimal
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("ResourceAsColor")
 @Composable
-fun ShippingScreen(modifier: Modifier = Modifier, navController: NavController, shippingScreenViewModel: ShippingScreenViewModel) {
+fun ShippingScreen(navController: NavController, shippingScreenViewModel: ShippingScreenViewModel) {
 
     val distanceValue by shippingScreenViewModel.distance_value.observeAsState(initial = 0)
     val weightValue by shippingScreenViewModel.weight_value.observeAsState(initial = 0)

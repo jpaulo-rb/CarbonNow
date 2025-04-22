@@ -19,6 +19,8 @@ import br.com.fiap.carbonnow.components.LoginScreen
 import br.com.fiap.carbonnow.components.OpenedDataScreen
 import br.com.fiap.carbonnow.components.ShippingScreen
 import br.com.fiap.carbonnow.ui.theme.CarbonNowTheme
+import br.com.fiap.carbonnow.viewmodel.ElectricityScreenViewModel
+import br.com.fiap.carbonnow.viewmodel.ShippingScreenViewModel
 
 class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -50,12 +52,14 @@ class MainActivity : ComponentActivity() {
                         composable(route = "electricity"){
                             ElectricityScreen(
                                 navController = navController,
-                                modifier = TODO(),
-                                electricityScreenViewModel = TODO()
+                                electricityScreenViewModel = ElectricityScreenViewModel()
                             )
                         }
                         composable(route = "shipping"){
-                            ShippingScreen(navController = navController, modifier = TODO(), shippingScreenViewModel = TODO())
+                            ShippingScreen(
+                                navController = navController,
+                                shippingScreenViewModel = ShippingScreenViewModel()
+                            )
                         }
                     }
                 }

@@ -44,7 +44,7 @@ import java.math.BigDecimal
 @SuppressLint("ResourceAsColor")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ElectricityScreen(modifier: Modifier = Modifier, navController: NavController, electricityScreenViewModel: ElectricityScreenViewModel) {
+fun ElectricityScreen(navController: NavController, electricityScreenViewModel: ElectricityScreenViewModel) {
 
     val electricityValue by electricityScreenViewModel.electricity_value.observeAsState(initial = 0)
     val carbon_g by electricityScreenViewModel.carbon_g.observeAsState(initial = 0)
